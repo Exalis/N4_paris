@@ -22,6 +22,10 @@
     <div class="container text-center">
       <h1>Site de pari pour la N4</h1>
       <p class="lead">Vous connaissez les règles :D</p>
+      <button style="gravity=center ;" class="btn btn-secondary btn-lg">
+        <a href="./tableau.php">Voir les paris</a>
+      </button>
+
     </div>
   </header>
 
@@ -53,9 +57,18 @@
 
         <div class="form-group">
             <label for="nomPari">Sur qui tu pari ?</label>
-            <input type="text" class="form-control" name="who" id="nomPari" placeholder="Je pari sur...">
-        </div>
+            <select class="form-control" name="who" id="nomPari">
+            <?php include_once "requete.php";
+              $paris = getJoueurs();
 
+              for ($i = 0; $i < count($paris) ; $i ++){
+                echo'<option value='.$paris[$i]['Id'].'>'.$paris[$i]['Nom'].'</option>';
+              }
+            
+            ?>
+            </select>
+        </div>
+              
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Une explication ?</label>
             <textarea class="form-control" name="why" id="exampleFormControlTextarea1" rows="3" placeholder="Pourquoi donc ? "></textarea>

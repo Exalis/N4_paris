@@ -4,12 +4,15 @@ include_once "bd.inc.php";
 function getData(){
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("SELECT *, NomPari FROM pari inner join typepari on pari.typePari = typepari.Id ;");
+        $req = $cnx->prepare("SELECT *, NomPari, Joueur.Nom FROM pari 
+        inner join typePari on pari.typePari = typePari.Id 
+        inner join Joueur on pari.PariSur = Joueur.Id;");
 
         $req->execute();
 
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        if($ligne == null) return;
         while ($ligne) {
             $resultat[] = $ligne;
             $ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -64,6 +67,27 @@ function getParis(){
     }
     return $resultat;
 }
+
+function getJoueurs(){
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("SELECT * from Joueur;");
+
+        $req->execute();
+
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
 
 
 ?>

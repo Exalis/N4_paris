@@ -34,11 +34,10 @@
                         <tr> 
                             <td>'.$getData[$i]['Nom'].'</td> 
                             <td>'.$getData[$i]['NomPari'].'</td> 
-                            <td>'.$getData[$i]['PariSur'].'</td> 
-                            <td>1 €</td> 
+                            <td>'.$getData[$i]['Nom'].'</td> 
+                            <td>0.5 €</td> 
                             <td>'.$getData[$i]['Pourquoi'].'</td> 
                         </tr>
-                    
                     ';
                 }
             
