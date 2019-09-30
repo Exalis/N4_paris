@@ -28,7 +28,7 @@
         <?php include_once "requete.php";
               $paris = getParis();
               
-              for ($i = 0; $i < count($paris) ; $i ++){
+              for ($i = 0; $i < count($paris)-2 ; $i ++){
                 echo'<div class="form-group">';
                 echo'<div class="fake_label '.$paris[$i]['NomPari'].'">'.$paris[$i]['NomPari'].'</div>';
 
@@ -42,7 +42,21 @@
                   echo'</select></div>';
                 echo'</div>';
               }
+
+              echo'
+              <div class="form-group">
+                <textarea class="form-control" name="who'.(count($paris)-2).'" id="exampleFormControlTextarea1" rows="1" ></textarea>
+                  <label for="exampleFormControlTextarea1">'.$paris[count($paris)-2]['NomPari'].'</label>
+              </div>
+
+              <div class="form-group">
+                <textarea class="form-control" name="who'.(count($paris)-1).'" id="exampleFormControlTextarea1" rows="1" ></textarea>
+                  <label for="exampleFormControlTextarea1">'.$paris[count($paris)-1]['NomPari'].'</label>
+              </div>
+              ';
             ?>
+
+        
               
         <div class="form-group">
           <textarea class="form-control" name="why" id="exampleFormControlTextarea1" rows="3" ></textarea>

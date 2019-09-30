@@ -27,7 +27,7 @@
 
             <tbody>
             <?php
-                $getData = getData();
+                $getData = getDataForPlayers();
                 for($i = 0; $i < count($getData) ; $i++){
                     echo'
                     
@@ -35,6 +35,19 @@
                             <td>'.$getData[$i]['NomParieur'].'</td> 
                             <td>'.$getData[$i]['NomPari'].'</td> 
                             <td>'.$getData[$i]['NomJoueur'].'</td> 
+                            <td>0.5 €</td> 
+                            <td>'.$getData[$i]['Pourquoi'].'</td> 
+                        </tr>
+                    ';
+                }
+                $getData = getDataForNbGoals();
+                for($i = 0; $i < count($getData) ; $i++){
+                    echo'
+                    
+                        <tr> 
+                            <td>'.$getData[$i]['NomParieur'].'</td> 
+                            <td>'.$getData[$i]['NomPari'].'</td> 
+                            <td>'.$getData[$i]['PariSur'].'</td> 
                             <td>0.5 €</td> 
                             <td>'.$getData[$i]['Pourquoi'].'</td> 
                         </tr>
