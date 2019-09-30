@@ -4,7 +4,9 @@ include_once "bd.inc.php";
 function getData(){
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("SELECT *, NomPari, Joueur.Nom FROM pari 
+        $req = $cnx->prepare("SELECT *, NomPari, 
+        Joueur.Nom as NomJoueur,
+        pari.Nom as NomParieur FROM pari 
         inner join typePari on pari.typePari = typePari.Id 
         inner join Joueur on pari.PariSur = Joueur.Id;");
 
