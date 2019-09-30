@@ -1,0 +1,256 @@
+.col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.col_force {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.row_force {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.btn, a.btn, button.btn {
+  padding: 15px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  background: linear-gradient(135deg, #01407d, #141414);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html .main_page .first_banner, body .main_page .first_banner {
+  min-height: 30vh;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 40px 6vw;
+  position: relative;
+  color: #ffffff;
+}
+
+html .main_page .first_banner:after, body .main_page .first_banner:after {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #01407d, #141414);
+}
+
+html .main_page .first_banner > *:not(.btn), body .main_page .first_banner > *:not(.btn) {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 99;
+}
+
+html .main_page .first_banner .btn, body .main_page .first_banner .btn {
+  position: relative;
+  z-index: 99;
+}
+
+html .main_page .first_banner .logo, body .main_page .first_banner .logo {
+  width: 300px;
+  position: relative;
+  z-index: 9;
+}
+
+html .main_page section, body .main_page section {
+  background: #f4f4f4;
+}
+
+html .main_page form, body .main_page form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70%;
+  margin: auto;
+  padding: 40px 0;
+}
+
+html .main_page form .form-group, body .main_page form .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+html .main_page form .form-group > *, body .main_page form .form-group > * {
+  width: 100%;
+}
+
+html .main_page form .form-group .fake_label, body .main_page form .form-group .fake_label {
+  padding-left: 20px;
+  padding-bottom: 10px;
+  background: linear-gradient(135deg, #01407d, #141414);
+  font-weight: 600;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html .main_page form .form-group .fake_label::first-letter, body .main_page form .form-group .fake_label::first-letter {
+  text-transform: uppercase;
+}
+
+html .main_page form .form-group label, body .main_page form .form-group label {
+  position: absolute;
+  top: 0px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  -webkit-transform: translateY(20px) scale(1);
+          transform: translateY(20px) scale(1);
+  background: linear-gradient(135deg, #01407d, #141414);
+  font-weight: 600;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+  pointer-events: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+html .main_page form .form-group .select_container:before, body .main_page form .form-group .select_container:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50px;
+  right: 15px;
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+  border-bottom: 2px solid #000000;
+  border-left: 2px solid #000000;
+}
+
+html .main_page form .form-group .select_container select, body .main_page form .form-group .select_container select {
+  width: 100%;
+}
+
+html .main_page form .form-group .select_container select:after, body .main_page form .form-group .select_container select:after {
+  content: '';
+}
+
+html .main_page form .form-group input, html .main_page form .form-group select, html .main_page form .form-group textarea, body .main_page form .form-group input, body .main_page form .form-group select, body .main_page form .form-group textarea {
+  padding: 20px 15px;
+  margin-top: 0px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+html .main_page form .form-group input::-webkit-input-placeholder, html .main_page form .form-group select::-webkit-input-placeholder, html .main_page form .form-group textarea::-webkit-input-placeholder, body .main_page form .form-group input::-webkit-input-placeholder, body .main_page form .form-group select::-webkit-input-placeholder, body .main_page form .form-group textarea::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+html .main_page form .form-group input:-ms-input-placeholder, html .main_page form .form-group select:-ms-input-placeholder, html .main_page form .form-group textarea:-ms-input-placeholder, body .main_page form .form-group input:-ms-input-placeholder, body .main_page form .form-group select:-ms-input-placeholder, body .main_page form .form-group textarea:-ms-input-placeholder {
+  opacity: 1;
+}
+
+html .main_page form .form-group input::-ms-input-placeholder, html .main_page form .form-group select::-ms-input-placeholder, html .main_page form .form-group textarea::-ms-input-placeholder, body .main_page form .form-group input::-ms-input-placeholder, body .main_page form .form-group select::-ms-input-placeholder, body .main_page form .form-group textarea::-ms-input-placeholder {
+  opacity: 1;
+}
+
+html .main_page form .form-group input::placeholder, html .main_page form .form-group select::placeholder, html .main_page form .form-group textarea::placeholder, body .main_page form .form-group input::placeholder, body .main_page form .form-group select::placeholder, body .main_page form .form-group textarea::placeholder {
+  opacity: 1;
+}
+
+html .main_page form .form-group input:focus ~ label, html .main_page form .form-group select:focus ~ label, html .main_page form .form-group textarea:focus ~ label, body .main_page form .form-group input:focus ~ label, body .main_page form .form-group select:focus ~ label, body .main_page form .form-group textarea:focus ~ label {
+  -webkit-transform: translateY(0px) scale(0.8);
+          transform: translateY(0px) scale(0.8);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+html .main_page form button, body .main_page form button {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+html .main_page form button:hover, body .main_page form button:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+/*# sourceMappingURL=style.css.map */
