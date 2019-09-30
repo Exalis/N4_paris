@@ -1,14 +1,39 @@
 <?php
 include_once "bd.inc.php";
 
-function getData(){
+function getDataForPlayers(){
     try {
         $cnx = connexionPDO();
         $req = $cnx->prepare("SELECT *, NomPari, 
         Joueur.Nom as NomJoueur,
         pari.Nom as NomParieur FROM pari 
         inner join typePari on pari.typePari = typePari.Id 
-        inner join Joueur on pari.PariSur = Joueur.Id;");
+        inner join Joueur on pari.PariSur = Joueur.Id
+        where pari.typePari < 4;");
+
+        $req->execute();
+
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        if($ligne == null) return;
+        while ($ligne) {
+            $resultat[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+function getDataForNbGoals(){
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("SELECT *, NomPari, 
+        pari.Nom as NomParieur FROM pari 
+        inner join typePari on pari.typePari = typePari.Id 
+        where pari.typePari >= 4;");
 
         $req->execute();
 
@@ -36,7 +61,7 @@ function addInBdd($Nom, $pariSur, $pourquoi, $typePari){
 
         $req->bindValue(':Nom', $Nom, PDO::PARAM_STR);
         $req->bindValue(':PariSur', $pariSur, PDO::PARAM_STR);
-        $req->bindValue(':pourquoi', $pourquoi, PDO::PARAM_STR);
+        $req->bindValue(':pourquoi', $pourquoi);
         $req->bindValue(':typePari', $typePari, PDO::PARAM_INT);
 
 
