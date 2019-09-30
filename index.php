@@ -32,7 +32,7 @@
                 echo'<div class="form-group">';
                 echo'<div class="fake_label '.$paris[$i]['NomPari'].'">'.$paris[$i]['NomPari'].'</div>';
 
-                echo'<div class="select_container"><select class="form-control" name="who" id="nomPari_'.$i.'">';
+                echo'<div class="select_container"><select class="form-control" name="who'.$i.'" id="nomPari_'.$i.'">';
                   $players = getJoueurs();
                   echo'<option value="nom du joueur"></option>';
 

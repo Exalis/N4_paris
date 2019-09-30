@@ -32,9 +32,9 @@
                     echo'
                     
                         <tr> 
-                            <td>'.$getData[$i]['Nom'].'</td> 
+                            <td>'.$getData[$i]['NomParieur'].'</td> 
                             <td>'.$getData[$i]['NomPari'].'</td> 
-                            <td>'.$getData[$i]['Nom'].'</td> 
+                            <td>'.$getData[$i]['NomJoueur'].'</td> 
                             <td>0.5 €</td> 
                             <td>'.$getData[$i]['Pourquoi'].'</td> 
                         </tr>
