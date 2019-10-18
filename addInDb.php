@@ -3,7 +3,7 @@ include "requete.php";
 
 if(isset($_POST['nom']) && $_POST['nom'] != null){
 
-    $paris = getParis();
+    $paris = getParis(2);
     for($i = 0;$i < count($paris); $i++){
         //Tout est bon
         $Nom = $_POST['nom'];

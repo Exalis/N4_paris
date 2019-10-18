@@ -27,7 +27,7 @@
 
             <tbody>
             <?php
-                $getData = getDataForPlayers();
+                $getData = getDataForPlayers(2);
                 for($i = 0; $i < count($getData) ; $i++){
                     echo'
                     
@@ -40,7 +40,7 @@
                         </tr>
                     ';
                 }
-                $getData = getDataForNbGoals();
+                $getData = getDataForNbGoals(2);
                 for($i = 0; $i < count($getData) ; $i++){
                     echo'
                     
