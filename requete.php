@@ -1,15 +1,17 @@
 <?php
 include_once "bd.inc.php";
 
-function getDataForPlayers(){
+function getDataForPlayers($journee){
     try {
         $cnx = connexionPDO();
         $req = $cnx->prepare("SELECT *, NomPari, 
         Joueur.Nom as NomJoueur,
-        pari.Nom as NomParieur FROM pari 
+        typePari.Journee as Journee,
+        pari.Nom as NomParieur FROM pari
         inner join typePari on pari.typePari = typePari.Id 
         inner join Joueur on pari.PariSur = Joueur.Id
-        where pari.typePari < 4;");
+        where pari.typePari < 8
+        and typePari.Journee = $journee;");
 
         $req->execute();
 
@@ -27,13 +29,17 @@ function getDataForPlayers(){
     return $resultat;
 }
 
-function getDataForNbGoals(){
+function getDataForNbGoals($journee){
     try {
         $cnx = connexionPDO();
         $req = $cnx->prepare("SELECT *, NomPari, 
-        pari.Nom as NomParieur FROM pari 
+        pari.Nom as NomParieur,
+        typePari.Journee as Journee
+        FROM pari 
         inner join typePari on pari.typePari = typePari.Id 
-        where pari.typePari >= 4;");
+        where pari.typePari >= 8
+        AND typePari.Journee = $journee;
+        ");
 
         $req->execute();
 
@@ -75,15 +81,15 @@ function addInBdd($Nom, $pariSur, $pourquoi, $typePari){
     return $resultat;
 }
 
-function getParis(){
+function getParis($journee){
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("SELECT * from typePari;");
+        $req = $cnx->prepare("SELECT * from typePari WHERE Journee = $journee;");
 
         $req->execute();
 
-
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        if($ligne == null) return;
         while ($ligne) {
             $resultat[] = $ligne;
             $ligne = $req->fetch(PDO::FETCH_ASSOC);

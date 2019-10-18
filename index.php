@@ -26,9 +26,9 @@
         </div>
     
         <?php include_once "requete.php";
-              $paris = getParis();
+              $paris = getParis(2);
               
-              for ($i = 0; $i < count($paris)-2 ; $i ++){
+              for ($i = 0; $i < count($paris)-4 ; $i ++){
                 echo'<div class="form-group">';
                 echo'<div class="fake_label '.$paris[$i]['NomPari'].'">'.$paris[$i]['NomPari'].'</div>';
 
@@ -45,13 +45,23 @@
 
               echo'
               <div class="form-group">
-                <textarea class="form-control" name="who'.(count($paris)-2).'" id="exampleFormControlTextarea1" rows="1" ></textarea>
-                  <label for="exampleFormControlTextarea1">'.$paris[count($paris)-2]['NomPari'].'</label>
+                <textarea class="form-control" name="who'.(count($paris)-4).'" id="exampleFormControlTextarea1" rows="1" ></textarea>
+                  <label for="exampleFormControlTextarea1">'.$paris[count($paris)-4]['NomPari'].'</label>
               </div>
 
               <div class="form-group">
-                <textarea class="form-control" name="who'.(count($paris)-1).'" id="exampleFormControlTextarea1" rows="1" ></textarea>
-                  <label for="exampleFormControlTextarea1">'.$paris[count($paris)-1]['NomPari'].'</label>
+                <textarea class="form-control" name="who'.(count($paris)-3).'" id="exampleFormControlTextarea2" rows="1" ></textarea>
+                  <label for="exampleFormControlTextarea2">'.$paris[count($paris)-3]['NomPari'].'</label>
+              </div>
+
+              <div class="form-group">
+                <textarea class="form-control" name="who'.(count($paris)-2).'" id="exampleFormControlTextarea3" rows="1" ></textarea>
+                  <label for="exampleFormControlTextarea3">'.$paris[count($paris)-2]['NomPari'].'</label>
+              </div>
+
+              <div class="form-group">
+                <textarea class="form-control" name="who'.(count($paris)-1).'" id="exampleFormControlTextarea4" rows="1" ></textarea>
+                  <label for="exampleFormControlTextarea4">'.$paris[count($paris)-1]['NomPari'].'</label>
               </div>
               ';
             ?>
